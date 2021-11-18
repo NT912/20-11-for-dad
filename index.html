@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Sun Devil Developer Designer">
+<meta name="author" content="Sun Devil">
+<link rel="shortcut icon" href="sundesign/favicon.png">
+<link rel="apple-touch-icon" href="sundesign/favicon.png">
+<link rel="stylesheet" type="text/css" href="sundesign/styles.css" />
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>Chào mừng ngày nhà giáo Việt Nam 20-11</title>
+</head>
+
+<body>
+
+
+
+
+<header>
+<div class="class_box_shadow">
+        <div class="logo" >
+		<img src="images/logo.png" width="100%"/>
+		</div>
+<div class="sh_bottom"></div></div>
+</header>
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/popup.css" />
+<script type="text/javascript" src="js/jquery.1.7.2.js"></script>
+<script type="text/javascript" src="js/jquery.popupMiendatweb.min.js"></script> 
+<style type="text/css">
+/* Circle Text Styles */
+#outerCircleText {
+/* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
+font-style: italic;
+font-weight: bold;
+font-family: 'comic sans ms', verdana, arial;
+color:#ff00ff;
+/* End Optional */
+
+/* Start Required - Do Not Edit */
+position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+#outerCircleText div {position: relative;}
+#outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+/* End Required */
+/* End Circle Text Styles */</style>
+<p>
+
+
+    <script type="text/javascript">
+
+/* Circling text trail- Tim Tilton
+   Website: http://www.tempermedia.com/
+   Visit: http://www.dynamicdrive.com/ for Original Source and tons of scripts
+   Modified Here for more flexibility and modern browser support
+   Modifications as first seen in http://www.dynamicdrive.com/forums/
+   username:jscheuer1 - This notice must remain for legal use
+   */
+
+;(function(){
+
+// Your message here (QUOTED STRING)
+var msg = "GVCN VÀ TẬP THỂ LỚP 10C6 CHÚC THẦY CÔ 20/11 VUI VẺ!";
+
+/* THE REST OF THE EDITABLE VALUES BELOW ARE ALL UNQUOTED NUMBERS */
+
+// Set font's style size for calculating dimensions
+// Set to number of desired pixels font size (decimal and negative numbers not allowed)
+var size = 20;
+
+// Set both to 1 for plain circle, set one of them to 2 for oval
+// Other numbers & decimals can have interesting effects, keep these low (0 to 3)
+var circleY = 0.75; var circleX = 2;
+
+// The larger this divisor, the smaller the spaces between letters
+// (decimals allowed, not negative numbers)
+var letter_spacing = 5;
+
+// The larger this multiplier, the bigger the circle/oval
+// (decimals allowed, not negative numbers, some rounding is applied)
+var diameter = 10;
+
+// Rotation speed, set it negative if you want it to spin clockwise (decimals allowed)
+var rotation = 0.1;
+
+// This is not the rotation speed, its the reaction speed, keep low!
+// Set this to 1 or a decimal less than one (decimals allowed, not negative numbers)
+var speed = 0.2;
+
+////////////////////// Stop Editing //////////////////////
+
+if (!window.addEventListener && !window.attachEvent || !document.createElement) return;
+
+msg = msg.split('');
+var n = msg.length - 1, a = Math.round(size * diameter * 0.208333), currStep = 20,
+ymouse = a * circleY + 20, xmouse = a * circleX + 20, y = [], x = [], Y = [], X = [],
+o = document.createElement('div'), oi = document.createElement('div'),
+b = document.compatMode && document.compatMode != "BackCompat"? document.documentElement : document.body,
+
+mouse = function(e){
+ e = e || window.event;
+ ymouse = !isNaN(e.pageY)? e.pageY : e.clientY; // y-position
+ xmouse = !isNaN(e.pageX)? e.pageX : e.clientX; // x-position
+},
+
+makecircle = function(){ // rotation/positioning
+ if(init.nopy){
+  o.style.top = (b || document.body).scrollTop + 'px';
+  o.style.left = (b || document.body).scrollLeft + 'px';
+ };
+ currStep -= rotation;
+ for (var d, i = n; i > -1; --i){ // makes the circle
+  d = document.getElementById('iemsg' + i).style;
+  d.top = Math.round(y[i] + a * Math.sin((currStep + i) / letter_spacing) * circleY - 15) + 'px';
+  d.left = Math.round(x[i] + a * Math.cos((currStep + i) / letter_spacing) * circleX) + 'px';
+ };
+},
+
+drag = function(){ // makes the resistance
+ y[0] = Y[0] += (ymouse - Y[0]) * speed;
+ x[0] = X[0] += (xmouse - 20 - X[0]) * speed;
+ for (var i = n; i > 0; --i){
+  y[i] = Y[i] += (y[i-1] - Y[i]) * speed;
+  x[i] = X[i] += (x[i-1] - X[i]) * speed;
+ };
+ makecircle();
+},
+
+init = function(){ // appends message divs, & sets initial values for positioning arrays
+ if(!isNaN(window.pageYOffset)){
+  ymouse += window.pageYOffset;
+  xmouse += window.pageXOffset;
+ } else init.nopy = true;
+ for (var d, i = n; i > -1; --i){
+  d = document.createElement('div'); d.id = 'iemsg' + i;
+  d.style.height = d.style.width = a + 'px';
+  d.appendChild(document.createTextNode(msg[i]));
+  oi.appendChild(d); y[i] = x[i] = Y[i] = X[i] = 0;
+ };
+ o.appendChild(oi); document.body.appendChild(o);
+ setInterval(drag, 25);
+},
+
+ascroll = function(){
+ ymouse += window.pageYOffset;
+ xmouse += window.pageXOffset;
+ window.removeEventListener('scroll', ascroll, false);
+};
+
+o.id = 'outerCircleText'; o.style.fontSize = size + 'px';
+
+if (window.addEventListener){
+ window.addEventListener('load', init, false);
+ document.addEventListener('mouseover', mouse, false);
+ document.addEventListener('mousemove', mouse, false);
+  if (/Apple/.test(navigator.vendor))
+   window.addEventListener('scroll', ascroll, false);
+}
+else if (window.attachEvent){
+ window.attachEvent('onload', init);
+ document.attachEvent('onmousemove', mouse);
+};
+
+})();
+
+</script>
+
+		
+
+<script type="text/javascript" language="JavaScript">
+	$(function(){
+		/* khởi tạo popup */
+        $('input[rel*=miendatwebPopup]').showPopup({ 
+        	top : 200, //khoảng cách popup cách so với phía trên
+        	closeButton: ".close_popup" , //khai báo nút close cho popup
+			scroll : false, //cho phép scroll khi mở popup, mặc định là không cho phép
+        	onClose:function(){            	
+        		//sự kiện cho phép gọi sau khi đóng popup, cho phép chúng ta gọi 1 số sự kiện khi đóng popup, bạn có thể để null ở đây
+        	}
+        });	
+	});
+</script>
+<style>
+	.center {text-align:center;margin:0 auto;margin-left: auto;margin-right: auto;width:960px;}
+	#open_popup {color: #FEF4E9;border: solid 1px #DA7C0C;background: #F78D1D;background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20));background: -moz-linear-gradient(top, #FAA51A, #F47A20);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');display: inline-block;outline: none;cursor: pointer;text-align: center;text-decoration: none;font: 12px/100% Arial, Helvetica, sans-serif;padding: .5em 2em .55em;text-shadow: 0 1px 1px rgba(0, 0, 0, .3);-webkit-border-radius: .5em;-moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+</style>
+<div align="center" class="center">
+	<!--<input type="button" id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content" value="Mở popup"/>-->
+</div>
+<div id="popup_content" class="popup">
+	<div class="popup-header">
+		<h2>Chào mừng 20-11</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center">TẶNG CÔ</p>
+	</div>
+	<div class="info_popup"><font color="green">
+	<br/><br/>
+		Tặng cô bao đóa hoa hồng<br/><br/>
+		Tặng cô với cả hương nồng sắc xuân<br/><br/>
+		Tháng ngày dạy dỗ ân cần<br/><br/>
+		Cho bao thế hệ góp phần dựng xây<br/><br/>
+		Tiếng cô tưởng nhớ mới đây<br /><br/>
+		Xây bao hạnh tràn đầy yêu thương.<br /><br/>
+		</font>
+	</div>
+
+</div>
+
+
+<div id="popup_content2" class="popup">
+	<div class="popup-header">
+		<h2>Chào mừng 20-11</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center">NGƯỜI THẦY</p>
+	</div>
+	<div class="info_popup">
+		<video width="320" height="240" controls autoplay>
+			<source src="video/nguoithay.mp4" type="video/mp4">
+			<source src="movie.ogg" type="video/ogg">
+		</video> 
+
+	</div>
+
+</div>
+
+
+
+
+<div id="popup_content3" class="popup">
+	<div class="popup-header">
+		<h2>Chào mừng 20-11</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center">NHỚ ƠN THẦY CÔ</p>
+	</div>
+	<div class="info_popup"><font color="green">
+	<br/><br/>
+		Chèo lái đưa đò cặp bến sông,<br/><br/>
+		Thầy cô mang nặng trái tim nồng<br/><br/>
+		Trồng người dạy chữ niềm say đắm<br/><br/>
+		Mỗi chuyến đò qua thỏa nỗi lòng<br/><br/>
+		Nhớ lắm ngày xưa tuổi học trò<br /><br/>
+		Nhớ từng nét chữ các thầy cô<br /><br/>
+		Mặc trời mưa nắng hay se lạnh<br /><br/>
+		Lời giảng còn vang vọng tới giờ<br /><br/>
+		Thế hệ chúng tôi nay đã lớn<br /><br/>
+		Mỗi người mỗi việc gắng hoàn thành<br /><br/>
+		Vẫn luôn canh cánh bao hoài niệm<br /><br/>
+		Bài học năm nào thuở tuổi xanh.<br /><br/>
+		</font>
+	</div>
+
+</div>
+
+
+<div id="popup_content4" class="popup">
+	<div class="popup-header">
+		<h2>Chào mừng 20-11</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center">TRI ÂN NGƯỜI LÁI ĐÒ</p>
+	</div>
+	<div class="info_popup"><font color="green">
+	<br/><br/>
+		Tri thức ngày xưa trở lại đây,<br/><br/>
+		Ân tình sâu nặng của cô thầy!<br/><br/>
+		Người mang ánh sáng soi đời trẻ;<br/><br/>
+		Lái chuyến đò chiều sang bến đây?<br/><br/>
+		Đò đến vinh quang nơi đất lạ;<br /><br/>
+		Cám ơn người đã lái đò hay!<br /><br/>
+		Ơn này trò mãi ghi trong dạ…<br /><br/>
+		</font>
+	</div>
+
+</div>
+
+
+
+<div id="popup_content5" class="popup">
+	<div class="popup-header">
+		<h2>Chào mừng 20-11</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center">NGHE THẦY ĐỌC THƠ</p>
+	</div>
+	<div class="info_popup"><font color="green">
+	<br/><br/>
+		Em nghe thầy đọc bao ngày<br/><br/>
+		Tiếng thơ đỏ nắng xanh cây quê nhà<br/><br/>
+		Mái chèo nghe vọng sông xa<br/><br/>
+		Êm êm như tiếng của bà năm xưa<br/><br/>
+		Nghe trăng thở động tàu dừa<br /><br/>
+		Rào rào nghe chuyển cơn mưa giữa trời<br /><br/>
+		Thêm yêu tiếng hát mẹ cười<br /><br/>
+		Yêu thơ em thấy đất trời đẹp ra.<br /><br/>
+		</font>
+	</div>
+</div>
+
+
+
+<div id="popup_content6" class="popup">
+	<div class="popup-header">
+		<h2>&copy;design 17/11/2021</h2>
+		<a class="close_popup" href="javascript:void(0)"></a>
+		<p align="center"> CODE BY TRAN HUU NHAT TRUONG</p>
+	</div>
+	<div class="info_popup"><font color="green">
+	<br/><br/>
+		TRAN HUU NHAT TRUONG<br/><br/>
+		The University of Danang <br/><br/>
+		University of Science and Technology<br/><br/>
+		Facebook: Trần Hữu Nhật Trường<br/><br/>
+		<br/>
+		</font>
+	</div>
+
+</div>
+
+
+
+<div class="box">
+		<div class="box-shadow"></div>
+		<div class="box-gradient">
+<article id="home-boxes">
+
+	<div id="main-wrapper" class="cf">
+        <a id="home-box-blog" class="home-box-wrapper">
+        	<div  id="home-box-blog-hidden" class="home-box-hidden"><div align="center"><input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content" value="Đọc"/></div></div>
+            <section class="home-box">
+                <p>CHÚC</p>
+            </section>
+        </a>
+        <a id="home-box-contact" class="home-box-wrapper">
+        	<div id="home-box-contact-hidden" class="home-box-hidden"><div align="center"><input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content2" value="Play/pause"/></div></div>
+            <section class="home-box">
+                <p>THẦY CÔ</p>
+            </section>
+        </a>
+        <a id="home-box-twitter" class="home-box-wrapper">
+        	<div id="home-box-twitter-hidden" class="home-box-hidden"><div align="center">
+			<input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content3" value="Đọc"/></div></div>
+            <section class="home-box">
+                <p>MỘT</p>
+            </section>
+        </a>
+        <a id="home-box-github" class="home-box-wrapper">
+            <div id="home-box-github-hidden" class="home-box-hidden"><div align="center"><input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content4" value="Đọc"/></div></div>
+            <section class="home-box">
+                <p>NGÀY</p>
+            </section>
+        </a>
+        <a id="home-box-cultivatr" class="home-box-wrapper" href="http://www.cultivatr.com/">
+        	<div id="home-box-cultivatr-hidden" class="home-box-hidden"><div align="center"><input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content5" value="Đọc"/></div></div>
+            <section class="home-box">
+                <p>VUI VẺ</p>
+            </section>
+        </a>
+        <a id="home-box-css3generator" class="home-box-wrapper" href="#">
+        	<div id="home-box-css3generator-hidden" class="home-box-hidden"><div align="center"><input id="open_popup" name="open_popup" rel="miendatwebPopup" href="#popup_content6" value="Thông tin"/></div></div>
+            <section class="home-box">
+                <p>TÁC GIẢ</p>
+            </section>
+        </a>
+    </div>
+</article>
+</div>
+		</div>
+<footer class="cf">
+	<small>&copy; 2002 - Trần Hữu Nhật Trường</small>
+    <div id="footer-twitter"><a href="https://www.facebook.com/tranhuunhattruong/">Trần Hữu Nhật Trường</a></div>
+</footer>
+
+
+
+
+<marquee behavior="alternate" style="position:absolute; top:40%;">
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/c.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/h.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/a.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/o.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/m.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/u.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/n.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/g.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/n.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/g.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/a.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/y.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/n.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/h.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/a.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/g.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/i.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/a.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/o.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/v.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/i.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/e.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/t.gif"  height="20px" border='0'>&nbsp;&nbsp;&nbsp;
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/n.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/a.gif"  height="20px" border='0'>
+<a href="http://daknongquetoi.com">
+<img alt="http://daknongquetoi.com" src="http://Taochu.Uhm.vN/chu/21/m.gif"  height="20px" border='0'>
+</a>
+</marquee>
+
+
+
+<script type='text/javascript'>
+//<![CDATA[
+var snowStorm=(function(window,document){this.flakesMax=60;this.flakesMaxActive=60;this.animationInterval=40;this.excludeMobile=true;this.flakeBottom=null;this.followMouse=true;this.snowColor='#fff';this.snowCharacter='&bull;';this.snowStick=false;this.targetElement=null;this.useMeltEffect=true;this.useTwinkleEffect=false;this.usePositionFixed=false;this.freezeOnBlur=true;this.flakeLeftOffset=0;this.flakeRightOffset=0;this.flakeWidth=5;this.flakeHeight=5;this.vMaxX=2.5;this.vMaxY=2.5;this.zIndex=100000;var s=this,storm=this,i,isIE=navigator.userAgent.match(/msie/i),isIE6=navigator.userAgent.match(/msie 6/i),isWin98=navigator.appVersion.match(/windows 98/i),isMobile=navigator.userAgent.match(/mobile/i),isBackCompatIE=(isIE&&document.compatMode==='BackCompat'),noFixed=(isMobile||isBackCompatIE||isIE6),screenX=null,screenX2=null,screenY=null,scrollY=null,vRndX=null,vRndY=null,windOffset=1,windMultiplier=2,flakeTypes=6,fixedForEverything=false,opacitySupported=(function(){try{document.createElement('div').style.opacity='0.5';}catch(e){return false;}
+return true;}()),didInit=false,docFrag=document.createDocumentFragment();this.timers=[];this.flakes=[];this.disabled=false;this.active=false;this.meltFrameCount=20;this.meltFrames=[];this.events=(function(){var old=(!window.addEventListener&&window.attachEvent),slice=Array.prototype.slice,evt={add:(old?'attachEvent':'addEventListener'),remove:(old?'detachEvent':'removeEventListener')};function getArgs(oArgs){var args=slice.call(oArgs),len=args.length;if(old){args[1]='on'+args[1];if(len>3){args.pop();}}else if(len===3){args.push(false);}
+return args;}
+function apply(args,sType){var element=args.shift(),method=[evt[sType]];if(old){element[method](args[0],args[1]);}else{element[method].apply(element,args);}}
+function addEvent(){apply(getArgs(arguments),'add');}
+function removeEvent(){apply(getArgs(arguments),'remove');}
+return{add:addEvent,remove:removeEvent};}());function rnd(n,min){if(isNaN(min)){min=0;}
+return(Math.random()*n)+min;}
+function plusMinus(n){return(parseInt(rnd(2),10)===1?n*-1:n);}
+this.randomizeWind=function(){var i;vRndX=plusMinus(rnd(s.vMaxX,0.2));vRndY=rnd(s.vMaxY,0.2);if(this.flakes){for(i=0;i<this.flakes.length;i++){if(this.flakes[i].active){this.flakes[i].setVelocities();}}}};this.scrollHandler=function(){var i;scrollY=(s.flakeBottom?0:parseInt(window.scrollY||document.documentElement.scrollTop||document.body.scrollTop,10));if(isNaN(scrollY)){scrollY=0;}
+if(!fixedForEverything&&!s.flakeBottom&&s.flakes){for(i=s.flakes.length;i--;){if(s.flakes[i].active===0){s.flakes[i].stick();}}}};this.resizeHandler=function(){if(window.innerWidth||window.innerHeight){screenX=window.innerWidth-(!isIE?16:16)-s.flakeRightOffset;screenY=(s.flakeBottom?s.flakeBottom:window.innerHeight);}else{screenX=(document.documentElement.clientWidth||document.body.clientWidth||document.body.scrollWidth)-(!isIE?8:0)-s.flakeRightOffset;screenY=s.flakeBottom?s.flakeBottom:(document.documentElement.clientHeight||document.body.clientHeight||document.body.scrollHeight);}
+screenX2=parseInt(screenX/2,10);};this.resizeHandlerAlt=function(){screenX=s.targetElement.offsetLeft+s.targetElement.offsetWidth-s.flakeRightOffset;screenY=s.flakeBottom?s.flakeBottom:s.targetElement.offsetTop+s.targetElement.offsetHeight;screenX2=parseInt(screenX/2,10);};this.freeze=function(){var i;if(!s.disabled){s.disabled=1;}else{return false;}
+for(i=s.timers.length;i--;){clearInterval(s.timers[i]);}};this.resume=function(){if(s.disabled){s.disabled=0;}else{return false;}
+s.timerInit();};this.toggleSnow=function(){if(!s.flakes.length){s.start();}else{s.active=!s.active;if(s.active){s.show();s.resume();}else{s.stop();s.freeze();}}};this.stop=function(){var i;this.freeze();for(i=this.flakes.length;i--;){this.flakes[i].o.style.display='none';}
+s.events.remove(window,'scroll',s.scrollHandler);s.events.remove(window,'resize',s.resizeHandler);if(s.freezeOnBlur){if(isIE){s.events.remove(document,'focusout',s.freeze);s.events.remove(document,'focusin',s.resume);}else{s.events.remove(window,'blur',s.freeze);s.events.remove(window,'focus',s.resume);}}};this.show=function(){var i;for(i=this.flakes.length;i--;){this.flakes[i].o.style.display='block';}};this.SnowFlake=function(parent,type,x,y){var s=this,storm=parent;this.type=type;this.x=x||parseInt(rnd(screenX-20),10);this.y=(!isNaN(y)?y:-rnd(screenY)-12);this.vX=null;this.vY=null;this.vAmpTypes=[1,1.2,1.4,1.6,1.8];this.vAmp=this.vAmpTypes[this.type];this.melting=false;this.meltFrameCount=storm.meltFrameCount;this.meltFrames=storm.meltFrames;this.meltFrame=0;this.twinkleFrame=0;this.active=1;this.fontSize=(10+(this.type/5)*10);this.o=document.createElement('div');this.o.innerHTML=storm.snowCharacter;this.o.style.color=storm.snowColor;this.o.style.position=(fixedForEverything?'fixed':'absolute');this.o.style.width=storm.flakeWidth+'px';this.o.style.height=storm.flakeHeight+'px';this.o.style.fontFamily='arial,verdana';this.o.style.overflow='hidden';this.o.style.fontWeight='normal';this.o.style.zIndex=storm.zIndex;docFrag.appendChild(this.o);this.refresh=function(){if(isNaN(s.x)||isNaN(s.y)){return false;}
+s.o.style.left=s.x+'px';s.o.style.top=s.y+'px';};this.stick=function(){if(noFixed||(storm.targetElement!==document.documentElement&&storm.targetElement!==document.body)){s.o.style.top=(screenY+scrollY-storm.flakeHeight)+'px';}else if(storm.flakeBottom){s.o.style.top=storm.flakeBottom+'px';}else{s.o.style.display='none';s.o.style.top='auto';s.o.style.bottom='0px';s.o.style.position='fixed';s.o.style.display='block';}};this.vCheck=function(){if(s.vX>=0&&s.vX<0.2){s.vX=0.2;}else if(s.vX<0&&s.vX>-0.2){s.vX=-0.2;}
+if(s.vY>=0&&s.vY<0.2){s.vY=0.2;}};this.move=function(){var vX=s.vX*windOffset,yDiff;s.x+=vX;s.y+=(s.vY*s.vAmp);if(s.x>=screenX||screenX-s.x<storm.flakeWidth){s.x=0;}else if(vX<0&&s.x-storm.flakeLeftOffset<-storm.flakeWidth){s.x=screenX-storm.flakeWidth-1;}
+s.refresh();yDiff=screenY+scrollY-s.y;if(yDiff<storm.flakeHeight){s.active=0;if(storm.snowStick){s.stick();}else{s.recycle();}}else{if(storm.useMeltEffect&&s.active&&s.type<3&&!s.melting&&Math.random()>0.998){s.melting=true;s.melt();}
+if(storm.useTwinkleEffect){if(!s.twinkleFrame){if(Math.random()>0.9){s.twinkleFrame=parseInt(Math.random()*20,10);}}else{s.twinkleFrame--;s.o.style.visibility=(s.twinkleFrame&&s.twinkleFrame%2===0?'hidden':'visible');}}}};this.animate=function(){s.move();};this.setVelocities=function(){s.vX=vRndX+rnd(storm.vMaxX*0.12,0.1);s.vY=vRndY+rnd(storm.vMaxY*0.12,0.1);};this.setOpacity=function(o,opacity){if(!opacitySupported){return false;}
+o.style.opacity=opacity;};this.melt=function(){if(!storm.useMeltEffect||!s.melting){s.recycle();}else{if(s.meltFrame<s.meltFrameCount){s.meltFrame++;s.setOpacity(s.o,s.meltFrames[s.meltFrame]);s.o.style.fontSize=s.fontSize-(s.fontSize*(s.meltFrame/s.meltFrameCount))+'px';s.o.style.lineHeight=storm.flakeHeight+2+(storm.flakeHeight*0.75*(s.meltFrame/s.meltFrameCount))+'px';}else{s.recycle();}}};this.recycle=function(){s.o.style.display='none';s.o.style.position=(fixedForEverything?'fixed':'absolute');s.o.style.bottom='auto';s.setVelocities();s.vCheck();s.meltFrame=0;s.melting=false;s.setOpacity(s.o,1);s.o.style.padding='0px';s.o.style.margin='0px';s.o.style.fontSize=s.fontSize+'px';s.o.style.lineHeight=(storm.flakeHeight+2)+'px';s.o.style.textAlign='center';s.o.style.verticalAlign='baseline';s.x=parseInt(rnd(screenX-storm.flakeWidth-20),10);s.y=parseInt(rnd(screenY)*-1,10)-storm.flakeHeight;s.refresh();s.o.style.display='block';s.active=1;};this.recycle();this.refresh();};this.snow=function(){var active=0,used=0,waiting=0,flake=null,i;for(i=s.flakes.length;i--;){if(s.flakes[i].active===1){s.flakes[i].move();active++;}else if(s.flakes[i].active===0){used++;}else{waiting++;}
+if(s.flakes[i].melting){s.flakes[i].melt();}}
+if(active<s.flakesMaxActive){flake=s.flakes[parseInt(rnd(s.flakes.length),10)];if(flake.active===0){flake.melting=true;}}};this.mouseMove=function(e){if(!s.followMouse){return true;}
+var x=parseInt(e.clientX,10);if(x<screenX2){windOffset=-windMultiplier+(x/screenX2*windMultiplier);}else{x-=screenX2;windOffset=(x/screenX2)*windMultiplier;}};this.createSnow=function(limit,allowInactive){var i;for(i=0;i<limit;i++){s.flakes[s.flakes.length]=new s.SnowFlake(s,parseInt(rnd(flakeTypes),10));if(allowInactive||i>s.flakesMaxActive){s.flakes[s.flakes.length-1].active=-1;}}
+storm.targetElement.appendChild(docFrag);};this.timerInit=function(){s.timers=(!isWin98?[setInterval(s.snow,s.animationInterval)]:[setInterval(s.snow,s.animationInterval*3),setInterval(s.snow,s.animationInterval)]);};this.init=function(){var i;for(i=0;i<s.meltFrameCount;i++){s.meltFrames.push(1-(i/s.meltFrameCount));}
+s.randomizeWind();s.createSnow(s.flakesMax);s.events.add(window,'resize',s.resizeHandler);s.events.add(window,'scroll',s.scrollHandler);if(s.freezeOnBlur){if(isIE){s.events.add(document,'focusout',s.freeze);s.events.add(document,'focusin',s.resume);}else{s.events.add(window,'blur',s.freeze);s.events.add(window,'focus',s.resume);}}
+s.resizeHandler();s.scrollHandler();if(s.followMouse){s.events.add(isIE?document:window,'mousemove',s.mouseMove);}
+s.animationInterval=Math.max(20,s.animationInterval);s.timerInit();};this.start=function(bFromOnLoad){if(!didInit){didInit=true;}else if(bFromOnLoad){return true;}
+if(typeof s.targetElement==='string'){var targetID=s.targetElement;s.targetElement=document.getElementById(targetID);if(!s.targetElement){throw new Error('Snowstorm: Unable to get targetElement "'+targetID+'"');}}
+if(!s.targetElement){s.targetElement=(!isIE?(document.documentElement?document.documentElement:document.body):document.body);}
+if(s.targetElement!==document.documentElement&&s.targetElement!==document.body){s.resizeHandler=s.resizeHandlerAlt;}
+s.resizeHandler();s.usePositionFixed=(s.usePositionFixed&&!noFixed);fixedForEverything=s.usePositionFixed;if(screenX&&screenY&&!s.disabled){s.init();s.active=true;}};function doDelayedStart(){window.setTimeout(function(){s.start(true);},20);s.events.remove(isIE?document:window,'mousemove',doDelayedStart);}
+function doStart(){if(!s.excludeMobile||!isMobile){if(s.freezeOnBlur){s.events.add(isIE?document:window,'mousemove',doDelayedStart);}else{doDelayedStart();}}
+s.events.remove(window,'load',doStart);}
+s.events.add(window,'load',doStart,false);return this;}(window,document));
+//]]>
+</script>
+
+
+</body>
+</html>
